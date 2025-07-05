@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Fractal Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌌 Interactive Fractal Explorer</h1>
+            <p>Explore the infinite beauty of mathematical fractals</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="canvas-container">
+                <canvas id="fractalCanvas" width="800" height="600"></canvas>
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="spinner"></div>
+                    <p>Generating fractal...</p>
+                </div>
+                <div class="zoom-info" id="zoomInfo">
+                    <span>Zoom: 1.00x</span>
+                    <span>Center: (0.00, 0.00)</span>
+                </div>
+            </div>
+            
+            <div class="controls-panel">
+                <div class="control-group">
+                    <h3>Fractal Type</h3>
+                    <select id="fractalType">
+                        <option value="mandelbrot">Mandelbrot Set</option>
+                        <option value="julia">Julia Set</option>
+                        <option value="burning-ship">Burning Ship</option>
+                        <option value="tricorn">Tricorn</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Iterations</h3>
+                    <input type="range" id="iterations" min="10" max="1000" value="100">
+                    <span id="iterationsValue">100</span>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Color Scheme</h3>
+                    <select id="colorScheme">
+                        <option value="hot">Hot</option>
+                        <option value="cool">Cool</option>
+                        <option value="rainbow">Rainbow</option>
+                        <option value="monochrome">Monochrome</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+                
+                <div class="control-group julia-controls" style="display: none;">
+                    <h3>Julia Parameters</h3>
+                    <label>Real: <input type="range" id="juliaReal" min="-2" max="2" step="0.01" value="-0.7"></label>
+                    <label>Imaginary: <input type="range" id="juliaImg" min="-2" max="2" step="0.01" value="0.27015"></label>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Actions</h3>
+                    <button id="resetView">Reset View</button>
+                    <button id="saveImage">Save Image</button>
+                    <button id="animateJulia">Animate Julia</button>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Instructions</h3>
+                    <ul>
+                        <li>Click to zoom in</li>
+                        <li>Right-click to zoom out</li>
+                        <li>Drag to pan</li>
+                        <li>Use mouse wheel to zoom</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Built with mathematics and wonder ✨</p>
+        </footer>
+    </div>
+    
+    <script src="fractal-engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
